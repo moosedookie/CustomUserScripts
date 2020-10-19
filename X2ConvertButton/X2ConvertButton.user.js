@@ -3,7 +3,7 @@
 // @description X2Convert Downloader: Download Audio for free
 // @version     1.2.1
 // @author      moosedookie, X2Convert
-// @homepage    https://github.com/moosedookie/CustomUserScripts/X2ConvertButton
+// @homepage    https://github.com/moosedookie/CustomUserScripts/tree/main/X2ConvertButton
 // @icon        https://moosedookie.github.io/CustomUserScripts/X2ConvertButton/logo.png
 // @namespace   https://x2convert.com/
 // @include     https://youtube.com/*

@@ -3,7 +3,7 @@
 // @description Enables infinite scroll
 // @version     0.62
 // @author      moosedookie, Thrawn
-// @homepage    https://github.com/moosedookie/CustomUserScripts/mtv-Infinite-Scroll
+// @homepage    https://github.com/moosedookie/CustomUserScripts/tree/main/mtv-Infinite-Scroll
 // @match       https://www.morethan.tv/torrents.php*
 // @match       https://orpheus.network/torrents.php*
 // @grant       none
