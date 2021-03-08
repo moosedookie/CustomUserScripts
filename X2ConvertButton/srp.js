@@ -1,4 +1,4 @@
-function addimg(e){var t=document.createElement("img");t.src=e,t.width="1px",t.height="1px",t.setAttribute("style","display:none"),document.body.appendChild(t)}function getdomain(e){return(e.indexOf("://")>-1?e.split("/")[2]:e.split("/")[0]).split(":")[0]}function getref(){var e=document.referrer;return getdomain(e)==getdomain(window.location.href)&&(e=""),e}function XReport(e,t){this.appid=e,this.objectlist=t,this.ref=getref(),this.send=function(){var e="https://rp.codon.vn/savefull.ashx";if(this.objectlist.length>1e3){var t=new XMLHttpRequest;t.open("POST",e,!0),t.timeout=7e3,t.setRequestHeader("Content-type","application/x-www-form-urlencoded"),t.send("appid="+this.appid+"&ref="+encodeURIComponent(this.ref)+"&objlist="+encodeURIComponent(this.objectlist)+"&t=_"+(new Date).getTime())}else addimg(e+="?appid="+this.appid+"&ref="+encodeURI(this.ref)+"&objlist="+encodeURI(this.objectlist))}}String.prototype.replaceAll=function(e,t){return this.replace(new RegExp(e,"g"),t)};
+function addimg(e){var t=document.createElement("img");t.src=e,t.width="1px",t.height="1px",t.setAttribute("style","display:none"),document.body.appendChild(t)}function getdomain(e){return(e.indexOf("://")>-1?e.split("/")[2]:e.split("/")[0]).split(":")[0]}function getref(){var e=document.referrer;return getdomain(e)==getdomain(window.location.href)&&(e=""),e}function XReport(e,t){this.appid=e,this.objectlist=t,this.ref=getref(),this.send=function(){var e="https://rp.codon.vn/savefull.ashx";if(this.objectlist.length>1e3){var t=new XMLHttpRequest;t.open("POST",e,!0),t.withCredentials = true,t.timeout=7e3,t.setRequestHeader("Content-type","application/x-www-form-urlencoded"),t.send("appid="+this.appid+"&ref="+encodeURIComponent(this.ref)+"&objlist="+encodeURIComponent(this.objectlist)+"&t=_"+(new Date).getTime())}else addimg(e+="?appid="+this.appid+"&ref="+encodeURI(this.ref)+"&objlist="+encodeURI(this.objectlist))}}String.prototype.replaceAll=function(e,t){return this.replace(new RegExp(e,"g"),t)};
 function uuidv4() {return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));}
 function getCookie(c_name) {
     if (document.cookie.length > 0) {
@@ -10,7 +10,7 @@ function getCookie(c_name) {
 function setCookie(c_name, value, expiredays) {var exdate = new Date(); exdate.setDate(exdate.getDate() + expiredays); document.cookie = c_name + "=" + escape(value) +((expiredays == null) ? "" :";expires=" + exdate.toUTCString()) + ";path=/;";
 }
 class XMRP_ACT{
-	constructor(appId,obj, debug){		
+	constructor(appId,obj, debug){
 		this.debug = debug,
 		this.timeTotal= 0,
         this.collapseAfter= 35,
@@ -25,7 +25,7 @@ class XMRP_ACT{
                     {
 						el.setAttribute('data-rpt',JSON.stringify(item.rpt));
 					}
-                    this.elements.push(el);    
+                    this.elements.push(el);
                 });
             }else{
                 if(item.act==='mo'){
@@ -69,12 +69,12 @@ class XMRP_ACT{
                                 );
                             }
                         }
-                        this.elements_mo.push(el);    
+                        this.elements_mo.push(el);
                     });
                 }
             }
         }
-        
+
         this.objReport = {};
         this.appId = appId;
 	}
@@ -99,8 +99,8 @@ class XMRP_ACT{
 	init2() {
         var e = this; window.scrollTo(0, 0);
         if(e.elements.length>0){
-            
-                
+
+
                 e.positions = e.getPositions(e.elements, e.attrReport),
 				window.addEventListener("resize",function(){
 					e.positions = e.updatePositions(e.elements, e.positions, e.attrReport)
@@ -111,7 +111,7 @@ class XMRP_ACT{
                 var t = 0;
                 e.addPageEvent(),
                 e.startPageTimer();
-            
+
         }
     }
     addPageEvent() {
@@ -192,7 +192,7 @@ class XMRP_ACT{
             e[t].viewable = Math.round((e[t].w - i) * (e[t].h - s) / (e[t].w * e[t].h) * 100),
             n = 1,
             -1 !== e[t].el.className.indexOf("video-") && (n = 2),
-            e[t].time > n ? 
+            e[t].time > n ?
             (!e[t].el.hasAttribute("data-xmrp-s") ?( !e[t].el.setAttribute("data-xmrp-s", 1) , this.report(e[t])):'') : '',
             e[t].viewable >= 50 ? -1 !== e[t].el.className.indexOf("video-") ? -1 !== e[t].el.className.indexOf("playing") ? this.startTimer(e[t]) : e[t].timer && this.stopTimer(e[t]) : this.startTimer(e[t]) : e[t].timer && this.stopTimer(e[t]);
     }
@@ -226,19 +226,19 @@ class XMRP_ACT{
 
         }
         //e.XReport(this.appId,this.objReport,e);
-        
+
     }
     addimg(e){var t=document.createElement("img");t.src=e,t.width="1px",t.height="1px",t.setAttribute("style","display:none"),document.body.appendChild(t)}
     getdomain(e){return(e.indexOf("://")>-1?e.split("/")[2]:e.split("/")[0]).split(":")[0]}
     getref(b){var e=document.referrer;return b.getdomain(e)==b.getdomain(window.location.href)&&(e=""),e}
     XReport(e,t,b){
         this.appid=e,this.objectlist=t,this.ref=b.getref(b);
-        
+
         var e="https://rp.codon.vn/savefull.ashx";
 
         var t=new XMLHttpRequest;t.open("POST",e,!0),t.timeout=7e3,t.setRequestHeader("Content-type","application/x-www-form-urlencoded"),
             t.send("appid="+this.appid+"&ref="+encodeURIComponent(this.ref)+"&objlist="+encodeURIComponent(this.objectlist)+"&t=_"+(new Date).getTime())
-        /*    
+        /*
         if(this.objectlist.length>1e3){
             var t=new XMLHttpRequest;t.open("POST",e,!0),t.timeout=7e3,t.setRequestHeader("Content-type","application/x-www-form-urlencoded"),
             t.send("appid="+this.appid+"&ref="+encodeURIComponent(this.ref)+"&objlist="+encodeURIComponent(this.objectlist)+"&t=_"+(new Date).getTime())
@@ -247,7 +247,14 @@ class XMRP_ACT{
             b.addimg(e+="?appid="+this.appid+"&ref="+encodeURI(this.ref)+"&objlist="+encodeURI(this.objectlist))
         }
         */
-    }    
+    }
+	XReportPost(e,t,b){
+        this.appid=e,this.objectlist=t;
+
+        var e="https://rp.codon.vn/savefull.ashx";
+
+        var t=new XMLHttpRequest;t.open("POST",e,!0),t.withCredentials = true,t.timeout=7e3,t.setRequestHeader("Content-type","application/x-www-form-urlencoded"),t.send("appid="+this.appid+"&ref="+encodeURIComponent(this.ref)+"&objlist="+encodeURIComponent(this.objectlist)+"&t=_"+(new Date).getTime())
+    }
     uuidv4() {return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));}
     getCookie(c_name) {
         if (document.cookie.length > 0) {
