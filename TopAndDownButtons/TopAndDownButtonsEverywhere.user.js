@@ -4,6 +4,7 @@
 // @version     1.7.2
 // @author      2019+ moosedookie, 2018+ Volkan K., 2014-2016 Max Max
 // @homepage    https://github.com/moosedookie/CustomUserScripts/tree/main/TopAndDownButtons
+// @namespace   https://github.com/moosedookie/CustomUserScripts
 // @icon        https://moosedookie.github.io/CustomUserScripts/TopAndDownButtons/icon.png
 // @include     *
 // @grant       unsafeWindow
