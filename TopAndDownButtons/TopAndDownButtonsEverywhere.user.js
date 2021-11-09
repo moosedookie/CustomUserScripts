@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        TopAndDownButtonsEverywhere
 // @description Top and Down buttons everywhere
-// @version     1.7.2
+// @version     1.7.3
 // @author      2019+ moosedookie, 2018+ Volkan K., 2014-2016 Max Max
 // @homepage    https://github.com/moosedookie/CustomUserScripts/tree/main/TopAndDownButtons
 // @namespace   https://github.com/moosedookie/CustomUserScripts
