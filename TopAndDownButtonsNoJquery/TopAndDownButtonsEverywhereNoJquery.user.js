@@ -44,7 +44,7 @@ var position,
 	t1, t2,
 	// speed by
 	speed_by_click = 500, // edit this value
-	speed_by_over = 100, // edit this value
+	speed_by_over = 1, // edit this value
 	// z-index
 	zIindex = 1001; // edit this value
 
