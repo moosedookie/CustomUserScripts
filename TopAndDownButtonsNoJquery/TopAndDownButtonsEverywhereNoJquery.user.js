@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name        TopAndDownButtonsEverywhere (no Jquery)
 // @description Top and Down buttons everywhere with No Jquery making it compatible with most sites.
-// @version     1.6.4
-// @author      2019-2021 moosedookie, 2014-2016 Max Max v1.6
+// @version     1.6.5
+// @author      moosedookie
 // @license     MIT
 // @icon        https://moosedookie.github.io/CustomUserScripts/TopAndDownButtonsNoJquery/icon.png
 // @homepage    https://github.com/moosedookie/CustomUserScripts
 // @namespace   https://moosedookie.github.io/CustomUserScripts/TopAndDownButtonsNoJquery
 // @orig-auth   https://greasyfork.org/en/scripts/22484-topanddownbuttonseverywhere
-// @include     *
+// @match       *://*/*
 // @grant       none
 // @run-at      document-end
 // @updateURL   https://moosedookie.github.io/CustomUserScripts/TopAndDownButtonsNoJquery/TopAndDownButtonsEverywhereNoJquery.user.js

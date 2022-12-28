@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name        Force SSL Torrent Invites
 // @description force HTTPS on torrentinvites.org
-// @version     1.1
-// @author      2022 moosedookie
+// @version     1.0.2
+// @author      moosedookie
 // @icon        https://moosedookie.github.io/CustomUserScripts/ForceSSLTorrentInvites/icon.png
 // @homepage    https://github.com/moosedookie/CustomUserScripts
 // @namespace   https://moosedookie.github.io/CustomUserScripts/ForceSSLTorrentInvites
